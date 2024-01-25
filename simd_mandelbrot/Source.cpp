@@ -111,16 +111,7 @@ public:
 		{
 			for (float x = 0; x < ScreenWidth(); x += register_count)
 			{
-				__m256 pixel_x;
-
-				pixel_x.m256_f32[0] = x;
-				pixel_x.m256_f32[1] = x + 1.0f;
-				pixel_x.m256_f32[2] = x + 2.0f;
-				pixel_x.m256_f32[3] = x + 3.0f;
-				pixel_x.m256_f32[4] = x + 4.0f;
-				pixel_x.m256_f32[5] = x + 5.0f;
-				pixel_x.m256_f32[6] = x + 6.0f;
-				pixel_x.m256_f32[7] = x + 7.0f;
+				__m256 pixel_x = _mm256_set_ps(x, x + 1.0f, x + 2.0f, x + 3.0f, x + 4.0f, x + 5.0f, x + 6.0f, x + 7.0f);
 
 				__m256 pixel_y = _mm256_set1_ps(y);
 
